@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .year {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #4a90e2;
+            font-size: 2em;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        .quarter {
+            margin: 20px 0;
+            padding: 15px;
+            background: #e7f3ff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+        }
+        input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            transform: scale(1.5);
+            margin: 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+        .percentage {
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #4a90e2;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            .container {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            li {
+                font-size: 1em;
+            }
+            .percentage {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Plano de Estudos (2025-2029)</h1>
+
+        <div class="year" data-total="12">
+            <h2>2025 <span class="percentage">(Faltam 100%)</span></h2>
+            <div class="quarter">
+                <strong>Janeiro - Março:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-1"> Java: Fundamentos de programação</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-2"> Cibersegurança: Introdução</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-3"> Inglês: Nível básico</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Abril - Junho:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-4"> Java: Orientação a objetos</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-5"> Cibersegurança: Criptografia básica</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-6"> Inglês: Conversação simples</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Julho - Setembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-7"> Java: Exceções</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-8"> Cibersegurança: Segurança de rede</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-9"> Inglês: Nível intermediário</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Outubro - Dezembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-10"> Java: Entrada/Saída</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-11"> Cibersegurança: Segurança de sistemas</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 0)" id="2025-12"> Inglês: Leitura e escrita</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year" data-total="12">
+            <h2>2026 <span class="percentage">(Faltam 100%)</span></h2>
+            <div class="quarter">
+                <strong>Janeiro - Março:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-1"> Java: Desenvolvimento web</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-2"> Cibersegurança: Teste de penetração</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-3"> Inglês: Nível intermediário</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Abril - Junho:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-4"> Java: Frameworks</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-5"> Cibersegurança: Análise de malware</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-6"> Inglês: Nível avançado</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Julho - Setembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-7"> Java: Projeto prático</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-8"> Cibersegurança: Auditoria de segurança</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-9"> Inglês: Nível avançado</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Outubro - Dezembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-10"> Java: Integração contínua</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-11"> Cibersegurança: Segurança em cloud</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 1)" id="2026-12"> Inglês: Nível avançado</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year" data-total="12">
+            <h2>2027 <span class="percentage">(Faltam 100%)</span></h2>
+            <div class="quarter">
+                <strong>Janeiro - Março:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-1"> Java: Microservices</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-2"> Cibersegurança: Inteligência de ameaças</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-3"> Inglês: Prática contínua</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Abril - Junho:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-4"> Java: Ferramentas de teste</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-5"> Cibersegurança: Segurança de aplicações</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-6"> Inglês: Prática avançada</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Julho - Setembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-7"> Java: Projeto prático</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-8"> Cibersegurança: Gestão de segurança</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-9"> Inglês: Estudos contínuos</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Outubro - Dezembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-10"> Java: Revisão e atualização</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-11"> Cibersegurança: Estudo de casos</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 2)" id="2027-12"> Inglês: Fluência total</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year" data-total="12">
+            <h2>2028 <span class="percentage">(Faltam 100%)</span></h2>
+            <div class="quarter">
+                <strong>Janeiro - Março:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-1"> Java: Avanço para novas linguagens</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-2"> Cibersegurança: Especializações</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-3"> Inglês: Estudos contínuos</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Abril - Junho:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-4"> Java: Aprendizado contínuo</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-5"> Cibersegurança: Pesquisas</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-6"> Inglês: Fluência aplicada</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Julho - Setembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-7"> Java: Trabalhos colaborativos</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-8"> Cibersegurança: Segurança em IoT</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-9"> Inglês: Comunicação global</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Outubro - Dezembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-10"> Java: Revisão geral</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-11"> Cibersegurança: Certificações</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 3)" id="2028-12"> Inglês: Revisão contínua</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="year" data-total="12">
+            <h2>2029 <span class="percentage">(Faltam 100%)</span></h2>
+            <div class="quarter">
+                <strong>Janeiro - Março:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-1"> Java: Projetos de inovação</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-2"> Cibersegurança: Defesa avançada</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-3"> Inglês: Comunicação em conferências</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Abril - Junho:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-4"> Java: Contribuição para a comunidade</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-5"> Cibersegurança: Estratégias de segurança</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-6"> Inglês: Impacto na carreira</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Julho - Setembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-7"> Java: Últimas tendências</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-8"> Cibersegurança: Preparação para desafios</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-9"> Inglês: Evolução contínua</li>
+                </ul>
+            </div>
+            <div class="quarter">
+                <strong>Outubro - Dezembro:</strong>
+                <ul>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-10"> Java: Reflexão e atualização</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-11"> Cibersegurança: Implementação de técnicas</li>
+                    <li><input type="checkbox" onchange="updateProgress(this, 4)" id="2029-12"> Inglês: Prática e aplicação</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="overall-percentage">
+            <h3>Progresso Total: <span id="total-progress">100%</span></h3>
+        </div>
+    </div>
+
+    <script>
+        let totalTasks = 0;
+        let completedTasks = 0;
+
+        // Carregar o estado dos checkboxes ao iniciar
+        document.addEventListener("DOMContentLoaded", () => {
+            loadCheckboxes();
+            updateTotalPercentage();
+        });
+
+        function updateProgress(checkbox, yearIndex) {
+            const year = checkbox.closest('.year');
+            const yearTotal = parseInt(year.getAttribute('data-total'));
+            totalTasks++;
+            
+            if (checkbox.checked) {
+                completedTasks++;
+                checkbox.parentElement.classList.add('completed');
+            } else {
+                completedTasks--;
+                checkbox.parentElement.classList.remove('completed');
+            }
+
+            saveCheckboxState(checkbox.id, checkbox.checked);
+            updateYearPercentage(year, yearTotal);
+            updateTotalPercentage();
+        }
+
+        function updateYearPercentage(year, yearTotal) {
+            const checkboxes = year.querySelectorAll('input[type="checkbox"]');
+            const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const yearPercentage = ((completed / yearTotal) * 100).toFixed(0);
+            const percentageElement = year.querySelector('.percentage');
+
+            percentageElement.textContent = `(Faltam ${100 - yearPercentage}%)`;
+        }
+
+        function updateTotalPercentage() {
+            const overallPercentage = ((completedTasks / totalTasks) * 100).toFixed(0);
+            document.getElementById('total-progress').textContent = overallPercentage + '%';
+        }
+
+        function saveCheckboxState(id, state) {
+            localStorage.setItem(id, state);
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const state = localStorage.getItem(checkbox.id);
+                if (state === 'true') {
+                    checkbox.checked = true;
+                    checkbox.parentElement.classList.add('completed');
+                    completedTasks++;
+                }
+                totalTasks++;
+            });
+        }
+    </script>
+</body>
+</html>
